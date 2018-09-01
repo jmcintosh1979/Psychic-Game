@@ -1,0 +1,42 @@
+
+body {
+  background-image: url(../images/1.jpg);
+  background-size: 100%;
+  font-family: 'Merienda', cursive;
+  font-size: 18px;
+  color: white;
+  margin: 0px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+section {
+  margin-left: 5%;
+  margin-right: 10%;
+}
+
+.dir-text {
+  width: 45%;
+  line-height: 40px;
+  /* margin-top: 10%; */
+  float: left;
+  font-size: 30px;
+
+}
+
+.dir-text b {
+  color: blue;
+  font-size: 35px;
+}
+
+.crystal-ball {
+  margin-left: 14%;
+  margin-top:5%;
+  color: white;
+  text-align: center;
+  float: left;
+  font-size: 25px;
+}

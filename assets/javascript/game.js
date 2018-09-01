@@ -6,8 +6,8 @@ console.log(comChoices);
 
 var wins = 0;
 var losses = 0;
-var guesses = 10;
-var userKey = [" "];
+var guesses = 9;
+var userEntry = [ ];
 
 
 var dirText = document.getElementById("dir-text");
@@ -15,18 +15,21 @@ var userWins = document.getElementById("user-wins");
 var userLoss = document.getElementById("user-loses");
 var guessRemain = document.getElementById("guesses-remain");
 var userGuess = document.getElementById("user-guess");
+var guess = document.getElementById("user-entry");
 
 var reset = function() {
-  guesses = 10;
+  guesses = 9;
   comChoices = alphabet[Math.floor(Math.random() * alphabet.length)];
+  userEntry = [ ]
   console.log(comChoices);
 }
  
 document.onkeydown = function(event) {
   userKey = event.key;
+  userEntry.push(" " + userKey);
   
   if (userKey === comChoices) {
-    alert("Congrats!  You Won!")
+    alert("Congratulations!  You MUST be psychic too!")
     wins++;
     reset();
     
@@ -36,16 +39,17 @@ document.onkeydown = function(event) {
   }
 
   if (guesses === 0) {
-    alert("Sorry!  Try Again")
+    alert("Too bad...not everyone can be psychic.")
     losses++;
     reset();
   } 
 
-  dirText.textContent = "";
+  // dirText.textContent = "";
   userWins.textContent = "Wins: " + wins;
   userLoss.textContent = "Losses: " + losses;
   guessRemain.textContent = "Guesses Remaining: " + guesses;
-  userGuess.textContent = "Your guesses so far: " + userKey;
+  userGuess.textContent = "Your guesses so far: ";
+  guess.textContent = userEntry;
 
 }
 
